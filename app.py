@@ -73,11 +73,11 @@ def extrair_texto_e_tabelas(caminho_pdf):
     return documento_texto, documentos_tabelas
 
 caminhos_pdfs = [
-    r"data\documentos_fonte\01_politica_privacidade_protecao_dados.pdf",
-    r"data\documentos_fonte\02_termos_condicoes_uso.pdf",
-    r"data\documentos_fonte\03_faq_transacoes_limites.pdf",
-    r"data\documentos_fonte\04_politica_seguranca_prevencao_fraudes.pdf",
-    r"data\documentos_fonte\05_tarifas_comissoes.pdf",
+    r"data/documentos_fonte/01_politica_privacidade_protecao_dados.pdf",
+    r"data/documentos_fonte/02_termos_condicoes_uso.pdf",
+    r"data/documentos_fonte/03_faq_transacoes_limites.pdf",
+    r"data/documentos_fonte/04_politica_seguranca_prevencao_fraudes.pdf",
+    r"data/documentos_fonte/05_tarifas_comissoes.pdf",
 ]
 
 documentos_texto = []
