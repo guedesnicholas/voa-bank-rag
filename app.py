@@ -12,11 +12,22 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_huggingface import HuggingFaceEmbeddings
+from docling.document_converter import DocumentConverter, PdfFormatOption
+from docling.datamodel.pipeline_options import PdfPipelineOptions
+from docling.datamodel.base_models import InputFormat
 
 api_key = st.secrets["OPENROUTER_API_KEY"]
 
 
-converter = DocumentConverter()
+
+pipeline_options = PdfPipelineOptions()
+pipeline_options.do_ocr = False  # <-- desativa OCR
+
+converter = DocumentConverter(
+    format_options={
+        InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)
+    }
+)
 
 
 def limpar(s):
