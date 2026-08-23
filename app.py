@@ -13,6 +13,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.vectorstores import InMemoryVectorStore
 from langchain_huggingface import HuggingFaceEmbeddings
 
+api_key = st.secrets["OPENROUTER_API_KEY"]
 
 
 converter = DocumentConverter()
@@ -111,7 +112,7 @@ retriever = vector_store.as_retriever(search_kwargs={"k": 6})
 
 # llm = ChatOllama(model="llama3.1", temperature=0)
 
-llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0, google_api_key=st.secrets["GOOGLE_API_KEY"])
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0, google_api_key=st.secrets["OPENROUTER_API_KEY"])
 
 prompt = ChatPromptTemplate.from_template("""
 Você é um assistente do Voa Bank. Responda a pergunta do colaborador
